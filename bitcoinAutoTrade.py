@@ -51,8 +51,8 @@ while True:
                 if krw > 5000:
                     upbit.buy_market_order("KRW-DOGE", krw*0.9994)
         else:
-            btc = get_balance("DOGE")
-            if btc > 25:
+            DOGE = get_balance("DOGE")
+            if DOGE > 25:
                 upbit.sell_market_order("KRW-DOGE", DOGE*0.9994)
         time.sleep(1)
     except Exception as e:
