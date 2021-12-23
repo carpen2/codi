@@ -7,13 +7,13 @@ secret = "123"
 
 def get_target_price(ticker, k):
     """변동성 돌파 전략으로 매수 목표가 조회"""
-    df = pyupbit.get_ohlcv(ticker, interval="day", count=2)
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     target_price = df.iloc[0]['close'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * k
     return target_price
 
 def get_start_time(ticker):
     """시작 시간 조회"""
-    df = pyupbit.get_ohlcv(ticker, interval="day", count=1)
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=1)
     start_time = df.index[0]
     return start_time
 
@@ -41,7 +41,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-BTC")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
         
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-BTC", 0.51)
@@ -64,7 +64,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ETH")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             current_price = get_current_price("KRW-ETH")
@@ -86,7 +86,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-NEO")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-NEO", 0.51)
@@ -109,7 +109,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-MTL")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-MTL", 0.51)
@@ -132,7 +132,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-LTC")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-LTC", 0.51)
@@ -155,7 +155,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-XRP")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-XRP", 0.51)
@@ -178,7 +178,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ETC")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ETC", 0.51)
@@ -201,7 +201,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-OMG")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-OMG", 0.51)
@@ -224,7 +224,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-SNT")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-SNT", 0.51)
@@ -247,7 +247,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-WAVES")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-WAVES", 0.51)
@@ -270,7 +270,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-XEM")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-XEM", 0.51)
@@ -293,7 +293,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-QTUM")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-QTUM", 0.51)
@@ -316,7 +316,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-LSK")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-LSK", 0.51)
@@ -339,7 +339,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-STEEM")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10): 
             target_price = get_target_price("KRW-STEEM", 0.51)
@@ -362,7 +362,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-XLM")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-XLM", 0.51)
@@ -385,7 +385,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ARDR")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10): 
             target_price = get_target_price("KRW-ARDR", 0.51)
@@ -408,7 +408,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ARK")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ARK", 0.51)
@@ -431,7 +431,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-STORJ")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-STORJ", 0.51)
@@ -454,7 +454,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-GRS")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10): 
             target_price = get_target_price("KRW-GRS", 0.51)
@@ -477,7 +477,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-REP")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-REP", 0.51)
@@ -500,7 +500,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ADA")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ADA", 0.51)
@@ -523,7 +523,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-SBD")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-SBD", 0.51)
@@ -546,7 +546,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-POWR")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-POWR", 0.51)
@@ -569,7 +569,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-BTG")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-BTG", 0.51)
@@ -592,7 +592,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ICX")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ICX", 0.51)
@@ -615,7 +615,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-EOS")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-EOS", 0.51)
@@ -638,7 +638,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-TRX")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-TRX", 0.51)
@@ -661,7 +661,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-SC")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-SC", 0.51)
@@ -684,7 +684,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ONT")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ONT", 0.51)
@@ -707,7 +707,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ZIL")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ZIL", 0.51)
@@ -730,7 +730,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-POLY")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-POLY", 0.51)
@@ -753,7 +753,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ZRX")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ZRX", 0.51)
@@ -776,7 +776,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-LOOM")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-LOOM", 0.51)
@@ -799,7 +799,7 @@ while True:
     try:        
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-BCH")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-BCH", 0.51)
@@ -822,7 +822,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-BAT")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-BAT", 0.51)
@@ -845,7 +845,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-IOST")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-IOST", 0.51)
@@ -868,7 +868,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-RFR")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-RFR", 0.51)
@@ -891,7 +891,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-CVC")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-CVC", 0.51)
@@ -914,7 +914,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-IQ")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10): 
             target_price = get_target_price("KRW-IQ", 0.51)
@@ -937,7 +937,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-IOTA")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10): 
             target_price = get_target_price("KRW-IOTA", 0.51)
@@ -960,7 +960,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-MFT")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-MFT", 0.51)
@@ -983,7 +983,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ONG")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ONG", 0.51)
@@ -1006,7 +1006,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-GAS")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-GAS", 0.51)
@@ -1029,7 +1029,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-UPP")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-UPP", 0.51)
@@ -1052,7 +1052,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ELF")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ELF", 0.51)
@@ -1075,7 +1075,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-KNC")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-KNC", 0.51)
@@ -1098,7 +1098,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-BSV")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-BSV", 0.51)
@@ -1121,7 +1121,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-THETA")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-THETA", 0.51)
@@ -1144,7 +1144,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-QKC")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-QKC", 0.51)
@@ -1167,7 +1167,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-BTT")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10): 
             target_price = get_target_price("KRW-BTT", 0.51)
@@ -1190,7 +1190,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-MOC")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-MOC", 0.51)
@@ -1213,7 +1213,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ENJ")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ENJ", 0.51)
@@ -1236,7 +1236,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-TFUEL")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-TFUEL", 0.51)
@@ -1259,7 +1259,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-MANA")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-MANA", 0.51)
@@ -1282,7 +1282,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ANKR")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ANKR", 0.51)
@@ -1305,7 +1305,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-AERGO")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-AERGO", 0.51)
@@ -1328,7 +1328,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ATOM")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ATOM", 0.51)
@@ -1351,7 +1351,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-TT")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-TT", 0.51)
@@ -1374,7 +1374,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-CRE")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-CRE", 0.51)
@@ -1397,7 +1397,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-MBL")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-MBL", 0.51)
@@ -1420,7 +1420,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-WAXP")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-WAXP", 0.51)
@@ -1443,7 +1443,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-HBAR")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-HBAR", 0.51)
@@ -1466,7 +1466,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-MED")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-MED", 0.51)
@@ -1489,7 +1489,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-MLK")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-MLK", 0.51)
@@ -1512,7 +1512,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-STPT")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-STPT", 0.51)
@@ -1535,7 +1535,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ORBS")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ORBS", 0.51)
@@ -1558,7 +1558,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-VET")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-VET", 0.51)
@@ -1581,7 +1581,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-CHZ")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-CHZ", 0.51)
@@ -1604,7 +1604,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-STMX")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-STMX", 0.51)
@@ -1627,7 +1627,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-DKA")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-DKA", 0.51)
@@ -1650,7 +1650,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-HIVE")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-HIVE", 0.51)
@@ -1673,7 +1673,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-KAVA")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-KAVA", 0.51)
@@ -1696,7 +1696,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-AHT")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-AHT", 0.51)
@@ -1719,7 +1719,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-LINK")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-LINK", 0.51)
@@ -1742,7 +1742,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-XTZ")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-XTZ", 0.51)
@@ -1765,7 +1765,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-BORA")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-BORA", 0.51)
@@ -1788,7 +1788,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-JST")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-JST", 0.51)
@@ -1811,7 +1811,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-CRO")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10): 
             target_price = get_target_price("KRW-CRO", 0.51)
@@ -1834,7 +1834,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-TON")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-TON", 0.51)
@@ -1857,7 +1857,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-SXP")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-SXP", 0.51)
@@ -1880,7 +1880,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-HUNT")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-HUNT", 0.51)
@@ -1903,7 +1903,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-PLA")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-PLA", 0.51)
@@ -1926,7 +1926,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-DOT")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-DOT", 0.51)
@@ -1949,7 +1949,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-SRM")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-SRM", 0.51)
@@ -1972,7 +1972,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-MVL")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-MVL", 0.51)
@@ -1995,7 +1995,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-STRAX")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-STRAX", 0.51)
@@ -2018,7 +2018,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-AQT")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10): 
             target_price = get_target_price("KRW-AQT", 0.51)
@@ -2041,7 +2041,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-GLM")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-GLM", 0.51)
@@ -2064,7 +2064,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-SSX")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-SSX", 0.51)
@@ -2087,7 +2087,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-META")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-META", 0.51)
@@ -2110,7 +2110,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-FCT2")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-FCT2", 0.51)
@@ -2133,7 +2133,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-CBK")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-CBK", 0.51)
@@ -2156,7 +2156,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-SAND")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-SAND", 0.51)
@@ -2179,7 +2179,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-HUM")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-HUM", 0.51)
@@ -2202,7 +2202,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-DOGE")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10): 
             target_price = get_target_price("KRW-DOGE", 0.51)
@@ -2225,7 +2225,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-STRK")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-STRK", 0.51)
@@ -2248,7 +2248,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-PUNDIX")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-PUNDIX", 0.51)
@@ -2271,7 +2271,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-FLOW")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-FLOW", 0.51)
@@ -2294,7 +2294,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-DAWN")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-DAWN", 0.51)
@@ -2317,7 +2317,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-AXS")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-AXS", 0.51)
@@ -2340,7 +2340,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-STX")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10): 
             target_price = get_target_price("KRW-STX", 0.51)
@@ -2363,7 +2363,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-XEC")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-XEC", 0.51)
@@ -2386,7 +2386,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-SOL")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-SOL", 0.51)
@@ -2409,7 +2409,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-MATIC")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10): 
             target_price = get_target_price("KRW-MATIC", 0.51)
@@ -2432,7 +2432,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-NU")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-NU", 0.51)
@@ -2455,7 +2455,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-AAVE")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-AAVE", 0.51)
@@ -2478,7 +2478,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-ALGO")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-ALGO", 0.51)
@@ -2501,7 +2501,7 @@ while True:
     try:
         now = datetime.datetime.now()
         start_time = get_start_time("KRW-NEAR")
-        end_time = start_time + datetime.timedelta(days=1)
+        end_time = start_time + datetime.timedelta(hours=4)
 
         if start_time < now < end_time - datetime.timedelta(seconds=10):
             target_price = get_target_price("KRW-NEAR", 0.51)
