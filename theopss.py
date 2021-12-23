@@ -56,10 +56,10 @@ while True:
             btc = get_balance("BTC")
             if btc > 0.00008:              
                 upbit.sell_market_order("KRW-BTC", btc)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -78,10 +78,10 @@ while True:
             ETH = get_balance("ETH")
             if ETH > 0.00008:              
                 upbit.sell_market_order("KRW-ETH", ETH)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
     
     try:
         now = datetime.datetime.now()
@@ -101,10 +101,10 @@ while True:
             NEO = get_balance("NEO")
             if NEO > 0.00008:              
                 upbit.sell_market_order("KRW-NEO", NEO)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -124,10 +124,10 @@ while True:
             MTL = get_balance("MTL")
             if MTL > 0.00008:              
                 upbit.sell_market_order("KRW-MTL", MTL)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -147,10 +147,10 @@ while True:
             LTC = get_balance("LTC")
             if LTC > 0.00008:              
                 upbit.sell_market_order("KRW-LTC", LTC)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -170,10 +170,10 @@ while True:
             XRP = get_balance("XRP")
             if XRP > 0.00008:              
                 upbit.sell_market_order("KRW-XRP", XRP)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -193,10 +193,10 @@ while True:
             ETC = get_balance("ETC")
             if ETC > 0.00008:              
                 upbit.sell_market_order("KRW-ETC", ETC)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -216,10 +216,10 @@ while True:
             OMG = get_balance("OMG")
             if OMG > 0.00008:              
                 upbit.sell_market_order("KRW-OMG", OMG)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -239,10 +239,10 @@ while True:
             SNT = get_balance("SNT")
             if SNT > 0.00008:              
                 upbit.sell_market_order("KRW-SNT", SNT)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -262,10 +262,10 @@ while True:
             WAVES = get_balance("WAVES")
             if WAVES > 0.00008:              
                 upbit.sell_market_order("KRW-WAVES", WAVES)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -285,10 +285,10 @@ while True:
             XEM = get_balance("XEM")
             if XEM > 0.00008:              
                 upbit.sell_market_order("KRW-XEM", XEM)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -308,10 +308,10 @@ while True:
             QTUM = get_balance("QTUM")
             if QTUM > 0.00008:              
                 upbit.sell_market_order("KRW-QTUM", QTUM)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -331,10 +331,10 @@ while True:
             LSK = get_balance("LSK")
             if LSK > 0.00008:              
                 upbit.sell_market_order("KRW-LSK", LSK)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -354,10 +354,10 @@ while True:
             STEEM = get_balance("STEEM")
             if STEEM > 0.00008:              
                 upbit.sell_market_order("KRW-STEEM", STEEM)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -377,10 +377,10 @@ while True:
             XLM = get_balance("XLM")
             if XLM > 0.00008:              
                 upbit.sell_market_order("KRW-XLM", XLM)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -400,10 +400,10 @@ while True:
             ARDR = get_balance("ARDR")
             if ARDR > 0.00008:              
                 upbit.sell_market_order("KRW-ARDR", ARDR)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -423,10 +423,10 @@ while True:
             ARK = get_balance("ARK")
             if ARK > 0.00008:              
                 upbit.sell_market_order("KRW-ARK", ARK)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -446,10 +446,10 @@ while True:
             STORJ = get_balance("STORJ")
             if STORJ > 0.00008:              
                 upbit.sell_market_order("KRW-STORJ", STORJ)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -469,10 +469,10 @@ while True:
             GRS = get_balance("GRS")
             if GRS > 0.00008:              
                 upbit.sell_market_order("KRW-GRS", GRS)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -492,10 +492,10 @@ while True:
             REP = get_balance("REP")
             if REP > 0.00008:              
                 upbit.sell_market_order("KRW-REP", REP)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -515,10 +515,10 @@ while True:
             ADA = get_balance("ADA")
             if ADA > 0.00008:              
                 upbit.sell_market_order("KRW-ADA", ADA)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -538,10 +538,10 @@ while True:
             SBD = get_balance("SBD")
             if SBD > 0.00008:              
                 upbit.sell_market_order("KRW-SBD", SBD)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -561,10 +561,10 @@ while True:
             POWR = get_balance("POWR")
             if POWR > 0.00008:              
                 upbit.sell_market_order("KRW-POWR", POWR)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -584,10 +584,10 @@ while True:
             BTG = get_balance("BTG")
             if BTG > 0.00008:              
                 upbit.sell_market_order("KRW-BTG", BTG)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -607,10 +607,10 @@ while True:
             ICX = get_balance("ICX")
             if ICX > 0.00008:              
                 upbit.sell_market_order("KRW-ICX", ICX)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -630,10 +630,10 @@ while True:
             EOS = get_balance("EOS")
             if EOS > 0.00008:              
                 upbit.sell_market_order("KRW-EOS", EOS)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -653,10 +653,10 @@ while True:
             TRX = get_balance("TRX")
             if TRX > 0.00008:              
                 upbit.sell_market_order("KRW-TRX", TRX)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -676,10 +676,10 @@ while True:
             SC = get_balance("SC")
             if SC > 0.00008:              
                 upbit.sell_market_order("KRW-SC", SC)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -699,10 +699,10 @@ while True:
             ONT = get_balance("ONT")
             if ONT > 0.00008:              
                 upbit.sell_market_order("KRW-ONT", ONT)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -722,10 +722,10 @@ while True:
             ZIL = get_balance("ZIL")
             if ZIL > 0.00008:              
                 upbit.sell_market_order("KRW-ZIL", ZIL)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -745,10 +745,10 @@ while True:
             POLY = get_balance("POLY")
             if POLY > 0.00008:              
                 upbit.sell_market_order("KRW-POLY", POLY)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -768,10 +768,10 @@ while True:
             ZRX = get_balance("ZRX")
             if ZRX > 0.00008:              
                 upbit.sell_market_order("KRW-ZRX", ZRX)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -791,10 +791,10 @@ while True:
             LOOM = get_balance("LOOM")
             if LOOM > 0.00008:              
                 upbit.sell_market_order("KRW-LOOM", LOOM)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:        
         now = datetime.datetime.now()
@@ -814,10 +814,10 @@ while True:
             BCH = get_balance("BCH")
             if BCH > 0.00008:              
                 upbit.sell_market_order("KRW-BCH", BCH)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -837,10 +837,10 @@ while True:
             BAT = get_balance("BAT")
             if BAT > 0.00008:              
                 upbit.sell_market_order("KRW-BAT", BAT)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -860,10 +860,10 @@ while True:
             IOST = get_balance("IOST")
             if IOST > 0.00008:              
                 upbit.sell_market_order("KRW-IOST", IOST)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -883,10 +883,10 @@ while True:
             RFR = get_balance("RFR")
             if RFR > 0.00008:              
                 upbit.sell_market_order("KRW-RFR", RFR)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -906,10 +906,10 @@ while True:
             CVC = get_balance("CVC")
             if CVC > 0.00008:              
                 upbit.sell_market_order("KRW-CVC", CVC)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -929,10 +929,10 @@ while True:
             IQ = get_balance("IQ")
             if IQ > 0.00008:              
                 upbit.sell_market_order("KRW-IQ", IQ)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -952,10 +952,10 @@ while True:
             IOTA = get_balance("IOTA")
             if IOTA > 0.00008:              
                 upbit.sell_market_order("KRW-IOTA", IOTA)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -975,10 +975,10 @@ while True:
             MFT = get_balance("MFT")
             if MFT > 0.00008:              
                 upbit.sell_market_order("KRW-MFT", MFT)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -998,10 +998,10 @@ while True:
             ONG = get_balance("ONG")
             if ONG > 0.00008:              
                 upbit.sell_market_order("KRW-ONG", ONG)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1021,10 +1021,10 @@ while True:
             GAS = get_balance("GAS")
             if GAS > 0.00008:              
                 upbit.sell_market_order("KRW-GAS", GAS)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1044,10 +1044,10 @@ while True:
             UPP = get_balance("UPP")
             if UPP > 0.00008:              
                 upbit.sell_market_order("KRW-UPP", UPP)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1067,10 +1067,10 @@ while True:
             ELF = get_balance("ELF")
             if ELF > 0.00008:              
                 upbit.sell_market_order("KRW-ELF", ELF)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1090,10 +1090,10 @@ while True:
             KNC = get_balance("KNC")
             if KNC > 0.00008:              
                 upbit.sell_market_order("KRW-KNC", KNC)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1113,10 +1113,10 @@ while True:
             BSV = get_balance("BSV")
             if BSV > 0.00008:              
                 upbit.sell_market_order("KRW-BSV", BSV)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1136,10 +1136,10 @@ while True:
             THETA = get_balance("THETA")
             if THETA > 0.00008:              
                 upbit.sell_market_order("KRW-THETA", THETA)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1159,10 +1159,10 @@ while True:
             QKC = get_balance("QKC")
             if QKC > 0.00008:              
                 upbit.sell_market_order("KRW-QKC", QKC)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1182,10 +1182,10 @@ while True:
             BTT = get_balance("BTT")
             if BTT > 0.00008:              
                 upbit.sell_market_order("KRW-BTT", BTT)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1205,10 +1205,10 @@ while True:
             MOC = get_balance("MOC")
             if MOC > 0.00008:              
                 upbit.sell_market_order("KRW-MOC", MOC)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1228,10 +1228,10 @@ while True:
             ENJ = get_balance("ENJ")
             if ENJ > 0.00008:              
                 upbit.sell_market_order("KRW-ENJ", ENJ)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1251,10 +1251,10 @@ while True:
             TFUEL = get_balance("TFUEL")
             if TFUEL > 0.00008:              
                 upbit.sell_market_order("KRW-TFUEL", TFUEL)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1274,10 +1274,10 @@ while True:
             MANA = get_balance("MANA")
             if MANA > 0.00008:              
                 upbit.sell_market_order("KRW-MANA", MANA)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1297,10 +1297,10 @@ while True:
             ANKR = get_balance("ANKR")
             if ANKR > 0.00008:              
                 upbit.sell_market_order("KRW-ANKR", ANKR)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1320,10 +1320,10 @@ while True:
             AERGO = get_balance("AERGO")
             if AERGO > 0.00008:              
                 upbit.sell_market_order("KRW-AERGO", AERGO)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1343,10 +1343,10 @@ while True:
             ATOM = get_balance("ATOM")
             if ATOM > 0.00008:              
                 upbit.sell_market_order("KRW-ATOM", ATOM)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1366,10 +1366,10 @@ while True:
             TT = get_balance("TT")
             if TT > 0.00008:              
                 upbit.sell_market_order("KRW-TT", TT)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1389,10 +1389,10 @@ while True:
             CRE = get_balance("CRE")
             if CRE > 0.00008:              
                 upbit.sell_market_order("KRW-CRE", CRE)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1412,10 +1412,10 @@ while True:
             MBL = get_balance("MBL")
             if MBL > 0.00008:              
                 upbit.sell_market_order("KRW-MBL", MBL)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1435,10 +1435,10 @@ while True:
             WAXP = get_balance("WAXP")
             if WAXP > 0.00008:              
                 upbit.sell_market_order("KRW-WAXP", WAXP)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1458,10 +1458,10 @@ while True:
             HBAR = get_balance("HBAR")
             if HBAR > 0.00008:              
                 upbit.sell_market_order("KRW-HBAR", HBAR)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1481,10 +1481,10 @@ while True:
             MED = get_balance("MED")
             if MED > 0.00008:              
                 upbit.sell_market_order("KRW-MED", MED)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1504,10 +1504,10 @@ while True:
             MLK = get_balance("MLK")
             if MLK > 0.00008:              
                 upbit.sell_market_order("KRW-MLK", MLK)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1527,10 +1527,10 @@ while True:
             STPT = get_balance("STPT")
             if STPT > 0.00008:              
                 upbit.sell_market_order("KRW-STPT", STPT)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1550,10 +1550,10 @@ while True:
             ORBS = get_balance("ORBS")
             if ORBS > 0.00008:              
                 upbit.sell_market_order("KRW-ORBS", ORBS)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1573,10 +1573,10 @@ while True:
             VET = get_balance("VET")
             if VET > 0.00008:              
                 upbit.sell_market_order("KRW-VET", VET)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1596,10 +1596,10 @@ while True:
             CHZ = get_balance("CHZ")
             if CHZ > 0.00008:              
                 upbit.sell_market_order("KRW-CHZ", CHZ)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1619,10 +1619,10 @@ while True:
             STMX = get_balance("STMX")
             if STMX > 0.00008:              
                 upbit.sell_market_order("KRW-STMX", STMX)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1642,10 +1642,10 @@ while True:
             DKA = get_balance("DKA")
             if DKA > 0.00008:              
                 upbit.sell_market_order("KRW-DKA", DKA)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1665,10 +1665,10 @@ while True:
             HIVE = get_balance("HIVE")
             if HIVE > 0.00008:              
                 upbit.sell_market_order("KRW-HIVE", HIVE)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1688,10 +1688,10 @@ while True:
             KAVA = get_balance("KAVA")
             if KAVA > 0.00008:              
                 upbit.sell_market_order("KRW-KAVA", KAVA)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1711,10 +1711,10 @@ while True:
             AHT = get_balance("AHT")
             if AHT > 0.00008:              
                 upbit.sell_market_order("KRW-AHT", AHT)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1734,10 +1734,10 @@ while True:
             LINK = get_balance("LINK")
             if LINK > 0.00008:              
                 upbit.sell_market_order("KRW-LINK", LINK)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1757,10 +1757,10 @@ while True:
             XTZ = get_balance("XTZ")
             if XTZ > 0.00008:              
                 upbit.sell_market_order("KRW-XTZ", XTZ)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1780,10 +1780,10 @@ while True:
             BORA = get_balance("BORA")
             if BORA > 0.00008:              
                 upbit.sell_market_order("KRW-BORA", BORA)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1803,10 +1803,10 @@ while True:
             JST = get_balance("JST")
             if JST > 0.00008:              
                 upbit.sell_market_order("KRW-JST", JST)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1826,10 +1826,10 @@ while True:
             CRO = get_balance("CRO")
             if CRO > 0.00008:              
                 upbit.sell_market_order("KRW-CRO", CRO)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1849,10 +1849,10 @@ while True:
             TON = get_balance("TON")
             if TON > 0.00008:              
                 upbit.sell_market_order("KRW-TON", TON)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1872,10 +1872,10 @@ while True:
             SXP = get_balance("SXP")
             if SXP > 0.00008:              
                 upbit.sell_market_order("KRW-SXP", SXP)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1895,10 +1895,10 @@ while True:
             HUNT = get_balance("HUNT")
             if HUNT > 0.00008:              
                 upbit.sell_market_order("KRW-HUNT", HUNT)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1918,10 +1918,10 @@ while True:
             PLA = get_balance("PLA")
             if PLA > 0.00008:              
                 upbit.sell_market_order("KRW-PLA", PLA)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1941,10 +1941,10 @@ while True:
             DOT = get_balance("DOT")
             if DOT > 0.00008:              
                 upbit.sell_market_order("KRW-DOT", DOT)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1964,10 +1964,10 @@ while True:
             SRM = get_balance("SRM")
             if SRM > 0.00008:              
                 upbit.sell_market_order("KRW-SRM", SRM)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -1987,10 +1987,10 @@ while True:
             MVL = get_balance("MVL")
             if MVL > 0.00008:              
                 upbit.sell_market_order("KRW-MVL", MVL)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2010,10 +2010,10 @@ while True:
             STRAX = get_balance("STRAX")
             if STRAX > 0.00008:              
                 upbit.sell_market_order("KRW-STRAX", STRAX)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)        
+        time.sleep(1)        
 
     try:
         now = datetime.datetime.now()
@@ -2033,10 +2033,10 @@ while True:
             AQT = get_balance("AQT")
             if AQT > 0.00008:              
                 upbit.sell_market_order("KRW-AQT", AQT)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2056,10 +2056,10 @@ while True:
             GLM = get_balance("GLM")
             if GLM > 0.00008:              
                 upbit.sell_market_order("KRW-GLM", GLM)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2079,10 +2079,10 @@ while True:
             SSX = get_balance("SSX")
             if SSX > 0.00008:              
                 upbit.sell_market_order("KRW-SSX", SSX)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2102,10 +2102,10 @@ while True:
             META = get_balance("META")
             if META > 0.00008:              
                 upbit.sell_market_order("KRW-META", META)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
     
     try:
         now = datetime.datetime.now()
@@ -2125,10 +2125,10 @@ while True:
             FCT2 = get_balance("FCT2")
             if FCT2 > 0.00008:              
                 upbit.sell_market_order("KRW-FCT2", FCT2)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2148,10 +2148,10 @@ while True:
             CBK = get_balance("CBK")
             if CBK > 0.00008:              
                 upbit.sell_market_order("KRW-CBK", CBK)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2171,10 +2171,10 @@ while True:
             SAND = get_balance("SAND")
             if SAND > 0.00008:              
                 upbit.sell_market_order("KRW-SAND", SAND)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2194,10 +2194,10 @@ while True:
             HUM = get_balance("HUM")
             if HUM > 0.00008:              
                 upbit.sell_market_order("KRW-HUM", HUM)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2217,10 +2217,10 @@ while True:
             DOGE = get_balance("DOGE")
             if DOGE > 0.00008:              
                 upbit.sell_market_order("KRW-DOGE", DOGE)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2240,10 +2240,10 @@ while True:
             STRK = get_balance("STRK")
             if STRK > 0.00008:              
                 upbit.sell_market_order("KRW-STRK", STRK)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2263,10 +2263,10 @@ while True:
             PUNDIX = get_balance("PUNDIX")
             if PUNDIX > 0.00008:              
                 upbit.sell_market_order("KRW-PUNDIX", PUNDIX)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2286,10 +2286,10 @@ while True:
             FLOW = get_balance("FLOW")
             if FLOW > 0.00008:              
                 upbit.sell_market_order("KRW-FLOW", FLOW)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2309,10 +2309,10 @@ while True:
             DAWN = get_balance("DAWN")
             if DAWN > 0.00008:              
                 upbit.sell_market_order("KRW-DAWN", DAWN)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2332,10 +2332,10 @@ while True:
             AXS = get_balance("AXS")
             if AXS > 0.00008:              
                 upbit.sell_market_order("KRW-AXS", AXS)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2355,10 +2355,10 @@ while True:
             STX = get_balance("STX")
             if STX > 0.00008:              
                 upbit.sell_market_order("KRW-STX", STX)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2378,10 +2378,10 @@ while True:
             XEC = get_balance("XEC")
             if XEC > 0.00008:              
                 upbit.sell_market_order("KRW-XEC", XEC)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2401,10 +2401,10 @@ while True:
             SOL = get_balance("SOL")
             if SOL > 0.00008:              
                 upbit.sell_market_order("KRW-SOL", SOL)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2424,10 +2424,10 @@ while True:
             MATIC = get_balance("MATIC")
             if MATIC > 0.00008:              
                 upbit.sell_market_order("KRW-MATIC", MATIC)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2447,10 +2447,10 @@ while True:
             NU = get_balance("NU")
             if NU > 0.00008:              
                 upbit.sell_market_order("KRW-NU", NU)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2470,10 +2470,10 @@ while True:
             AAVE = get_balance("AAVE")
             if AAVE > 0.00008:              
                 upbit.sell_market_order("KRW-AAVE", AAVE)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2493,10 +2493,10 @@ while True:
             ALGO = get_balance("ALGO")
             if ALGO > 0.00008:              
                 upbit.sell_market_order("KRW-ALGO", ALGO)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
 
     try:
         now = datetime.datetime.now()
@@ -2516,7 +2516,7 @@ while True:
             NEAR = get_balance("NEAR")
             if NEAR > 0.00008:              
                 upbit.sell_market_order("KRW-NEAR", NEAR)
-        time.sleep(2)
+        time.sleep(1)
     except Exception as e:
         print(e)
-        time.sleep(2)
+        time.sleep(1)
