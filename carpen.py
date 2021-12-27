@@ -50,7 +50,7 @@ while True:
         start_time = get_start_time("KRW-BTC")
         end_time = start_time + datetime.timedelta(seconds=14400)
 
-        if now.hour == 9 and now.minute == 0 and 1 <=now.second <= 10 
+        if now.hour == 9 and now.minute == 0 and 1 <=now.second <= 10:
             op_mode = True
             time.sleep(10)
 
