@@ -155,7 +155,7 @@ while True:
                 krw = get_balance("KRW")
                 curr_ma5 = get_ticker_ma("KRW-ICX")
                 curr_ma10 = get_ticker_ma("KRW-ICX")
-                if krw > 20000 and curr_ma5 > curr_ma10::
+                if krw > 20000 and curr_ma5 > curr_ma10:
                     ICX = get_balance("ICX")
                     if ICX < 0.0001:
                         upbit.buy_market_order("KRW-ICX", 20000)
