@@ -81,6 +81,7 @@ while True:
                 op_mode = True
                 hold = False
                 target_p = get_target_price(ticker)
+                time.sleep(10)
             if start_time < now < end_time - datetime.timedelta(seconds=10):
                 target_p = get_target_price(ticker)
                 current_p = get_current_price(ticker)
