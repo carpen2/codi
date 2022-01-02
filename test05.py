@@ -95,7 +95,8 @@ while True:
                 current_p = get_current_price(ticker)
                 buy_p = get_avg_buy_price(ticker)
                 bct_balances = upbit.get_balance(ticker)
-                if buy_p * 1.03 < current_p:
+                high_p = get_high_price(ticker)
+                if high_p * 0.985 > current_p > open_p:
                     if BTC > 0.0002:
                         upbit.sell_market_order(ticker, bct_balances)
                 if buy_p * 0.98 > current_p:
