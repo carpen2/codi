@@ -8,7 +8,7 @@ secret = "mqsj8p9QYwd3A1Iich0KctXiz4ZJQrhDPxxA39DF"
 #변동성 돌파 전략으로 매수 목표가 조회
 def get_target_price(ticker):
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
-    target_price = df.iloc[1]['open'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.6
+    target_price = df.iloc[1]['open'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.5
     return target_price
 
 #시작가
