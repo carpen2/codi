@@ -77,8 +77,9 @@ while True:
                 now.hour == 1 and now.minute == 0 and 1 <=now.second <= 10 or \
                 now.hour == 5 and now.minute == 0 and 1 <=now.second <= 10:
                 op_mode = True
-                time.sleep(10)
+                target_p = get_target_price(ticker)
                 start_time = get_start_time(ticker)
+                time.sleep(10)             
             now = datetime.datetime.now()
             start_time = get_start_time(ticker)
             end_time = start_time + datetime.timedelta(seconds=14400)
