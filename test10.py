@@ -8,7 +8,7 @@ secret = "mqsj8p9QYwd3A1Iich0KctXiz4ZJQrhDPxxA39DF"
 #변동성 돌파 전략으로 매수 목표가 조회
 def get_target_price(ticker):
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
-    target_price = df.iloc[1]['open'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.5
+    target_price = df.iloc[1]['open'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.6
     return target_price
 
 #시작가
@@ -39,7 +39,7 @@ def get_avg_buys_price(ticker):
     return buy_price
 #손절
 def get_avg_buym_price(ticker):
-    buy_price = upbit.get_avg_buy_price(ticker) * 0.98
+    buy_price = upbit.get_avg_buy_price(ticker) * 0.985
     return buy_price
     
 #현재가 조회
@@ -104,11 +104,11 @@ while True:
                     krw = get_balance("KRW")
                     ma5 = get_moving_average(5, ticker)
                     ma10 = get_moving_average(10, ticker)
-                    if 15500 < krw and bct_balances < 0.0002 and ma10 < ma5:
+                    if 15500 < krw and bct_balances < 0.0002 and ma10 < ma5 and open_p * 1.02 < current_p:
                         upbit.buy_market_order(ticker, 15000)
-                if buys < current_p:
+                if buys <= current_p and bct_balances > 0.0002:
                     upbit.sell_market_order(ticker, bct_balances)
-                if current_p < buym:
+                if current_p <= buym and bct_balances > 0.0002:
                     upbit.sell_market_order(ticker, bct_balances)
             else:
                 bct_balances = upbit.get_balance(ticker)
