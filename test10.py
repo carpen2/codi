@@ -8,7 +8,7 @@ secret = "mqsj8p9QYwd3A1Iich0KctXiz4ZJQrhDPxxA39DF"
 #변동성 돌파 전략으로 매수 목표가 조회
 def get_target_price(ticker):
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
-    target_price = df.iloc[1]['open'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.6
+    target_price = df.iloc[1]['open'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.52
     return target_price
 
 #시작가
@@ -16,6 +16,17 @@ def get_open_price(ticker):
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     open_price = df.iloc[1]['open']
     return open_price
+
+#전날시가
+def get_open1_price(ticker):
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
+    high_price = df.iloc[0]['open']
+    return high_price
+#전날종가
+def get_close1_price(ticker):
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
+    close_price = df.iloc[0]['close']
+    return close_price
 
 #시작 시간 조회
 def get_start_time(ticker):
@@ -79,11 +90,11 @@ while True:
         for ticker in ori_tickers:
             now = datetime.datetime.now()
             if now.hour == 9 and now.minute == 0 and 1 <=now.second <= 10 or \
-                now.hour == 13 and now.minute == 0 and 1 <=now.second <= 10 or \
-                now.hour == 17 and now.minute == 0 and 1 <=now.second <= 10 or \
-                now.hour == 21 and now.minute == 0 and 1 <=now.second <= 10 or \
-                now.hour == 1 and now.minute == 0 and 1 <=now.second <= 10 or \
-                now.hour == 5 and now.minute == 0 and 1 <=now.second <= 10:
+            now.hour == 13 and now.minute == 0 and 1 <=now.second <= 10 or \
+            now.hour == 17 and now.minute == 0 and 1 <=now.second <= 10 or \
+            now.hour == 21 and now.minute == 0 and 1 <=now.second <= 10 or \
+            now.hour == 1 and now.minute == 0 and 1 <=now.second <= 10 or \
+            now.hour == 5 and now.minute == 0 and 1 <=now.second <= 10:
                 op_mode = True
                 target_p = get_target_price(ticker)
                 start_time = get_start_time(ticker)
@@ -102,9 +113,12 @@ while True:
                 buym = get_avg_buym_price(ticker)
                 if target_p < current_p and op_mode == True:
                     krw = get_balance("KRW")
+                    open1_p = get_open1_price(ticker)
+                    close1_p = get_close1_price(ticker)
                     ma5 = get_moving_average(5, ticker)
                     ma10 = get_moving_average(10, ticker)
-                    if 15500 < krw and bct_balances < 0.0002 and ma10 < ma5 and open_p * 1.02 < current_p:
+                    if 15500 <= krw and bct_balances < 0.0002 and ma10 < ma5 and open_p*1.02 <= current_p or\
+                    15500 <= krw and bct_balances < 0.0002 and close1_p < open1_p and open_p*1.05 <= current_p:                    
                         upbit.buy_market_order(ticker, 15000)
                 if buys <= current_p and bct_balances > 0.0002:
                     upbit.sell_market_order(ticker, bct_balances)
