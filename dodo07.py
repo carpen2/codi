@@ -139,7 +139,7 @@ while True:
                 time.sleep(10)             
             if start_time < now < end_time - datetime.timedelta(seconds=30):
                 if op_mode == True:
-                    if target_p <= current_p <= target_p*1.01 and ma10 < ma5 and high_p * 0.98 <= current_p or\
+                    if target_p <= current_p <= target_p*1.01 and ma10 < ma5 and high_p * 0.98 <= current_p and open_p*1.015 <= current_p or\
                         target_p < current_p and close1_p < open1_p and open_p*1.04 <= current_p <= open_p*1.05 and high_p * 0.98 <= current_p:
                         if cash > 15500 and bct_balances < 0.0002:
                             buy_order(ticker, 15000)
