@@ -108,7 +108,7 @@ while True:
                 now.hour == 21 and now.minute == 0 and 1 <=now.second <= 10 or \
                 now.hour == 1 and now.minute == 0 and 1 <=now.second <= 10 or \
                 now.hour == 5 and now.minute == 0 and 1 <=now.second <= 10:
-                ime.sleep(0.1)
+                time.sleep(0.1)
                 op_mode = True
                 target_p = get_target_price(ticker)
                 time.sleep(10)
