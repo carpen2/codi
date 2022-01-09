@@ -125,7 +125,10 @@ while True:
                     low_p = get_low_price(ticker)
                     ma5 = get_moving_average(5, ticker)
                     ma10 = get_moving_average(10, ticker)
-                    if target_p <= current_p and ma10 < ma5 and open_p * 1.02 <= current_p or low_p * 1.05 <= current_p:
+                    open1_p = get_open1_price(ticker)
+                    close1_p = get_close1_price(ticker)
+                    if target_p <= current_p and ma10 < ma5 and open_p * 1.02 <= current_p or \
+                        low_p * 1.05 <= current_p and close1_p < open1_p:
                         krw = get_balance("KRW")
                         bct_balances = upbit.get_balance(ticker)                      
                         if krw > 15500 and bct_balances < 0.0002:
