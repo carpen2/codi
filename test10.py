@@ -7,31 +7,37 @@ secret = "mqsj8p9QYwd3A1Iich0KctXiz4ZJQrhDPxxA39DF"
 
 #변동성 돌파 전략으로 매수 목표가 조회
 def get_target_price(ticker):
+    time.sleep(0.05)
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     target_price = df.iloc[1]['open'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.52
     return target_price
 #시작가
 def get_open_price(ticker):
+    time.sleep(0.05)
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     open_price = df.iloc[1]['open']
     return open_price
 #시작가
 def get_low_price(ticker):
+    time.sleep(0.05)
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     low_price = df.iloc[1]['low']
     return low_price
 #전날시가
 def get_open1_price(ticker):
+    time.sleep(0.05)
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     high_price = df.iloc[0]['open']
     return high_price
 #전날종가
 def get_close1_price(ticker):
+    time.sleep(0.05)
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     close_price = df.iloc[0]['close']
     return close_price
 #시작 시간 조회
 def get_start_time(ticker):
+    time.sleep(0.05)
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=1)
     start_time = df.index[0]
     return start_time
@@ -56,6 +62,7 @@ def get_avg_buy_price(ticker):
 #이동평균선
 def get_moving_average(window, ticker):
     try:
+        time.sleep(0.05)
         df = pyupbit.get_ohlcv(ticker, interval="minute240")
         ma = df['close'].rolling(window=window).mean()
         return ma[-1]
@@ -63,6 +70,7 @@ def get_moving_average(window, ticker):
         time.sleep(1)      
 #최고가 조회
 def get_high_price(ticker):
+    time.sleep(0.05)
     df2 = pyupbit.get_ohlcv(ticker, interval="minute240", count=1)
     high_price = df2.iloc[0]['high']
     return high_price
@@ -94,8 +102,6 @@ print("autotrade start")
 
 op_mode = False
 ori_tickers = pyupbit.get_tickers(fiat="KRW")
-hold1 = False 
-hold2 = False
 
 # 자동매매 시작
 while True:
@@ -108,16 +114,13 @@ while True:
                 now.hour == 21 and now.minute == 0 and 1 <=now.second <= 10 or \
                 now.hour == 1 and now.minute == 0 and 1 <=now.second <= 10 or \
                 now.hour == 5 and now.minute == 0 and 1 <=now.second <= 10:
-                time.sleep(0.1)
                 op_mode = True
                 target_p = get_target_price(ticker)
                 time.sleep(10)
             start_time = get_start_time(ticker)
             end_time = start_time + datetime.timedelta(seconds=14400)
-            time.sleep(0.05)
-            if start_time < now < end_time - datetime.timedelta(seconds=20):                
+            if start_time < now < end_time - datetime.timedelta(seconds=60):                
                 if op_mode == True:
-                    time.sleep(0.05)
                     target_p = get_target_price(ticker)
                     high_p = get_high_price(ticker)
                     open_p = get_open_price(ticker)
@@ -125,16 +128,15 @@ while True:
                     low_p = get_low_price(ticker)
                     ma5 = get_moving_average(5, ticker)
                     ma10 = get_moving_average(10, ticker)
+                    ma20 = get_moving_average(20, ticker)
                     open1_p = get_open1_price(ticker)
                     close1_p = get_close1_price(ticker)
-                    if target_p <= current_p and ma10 < ma5 and open_p * 1.02 <= current_p or \
-                        low_p * 1.05 <= current_p and close1_p < open1_p:
+                    if target_p <= current_p and ma20 < ma10 < ma5 or \
+                        open_p * 1.05 <= current_p and close1_p < open1_p:
                         krw = get_balance("KRW")
-                        bct_balances = upbit.get_balance(ticker)                      
-                        if krw > 15500 and bct_balances < 0.0002:
-                            buy_order(ticker, 15000)                            
-                time.sleep(0.05)
-                bct_balances = upbit.get_balance(ticker)
+                        bct_balances = upbit.get_balance(ticker)
+                        if krw > 10500 and bct_balances < 0.0002:
+                            buy_order(ticker, 10000)                            
                 current_p = get_current_price(ticker)
                 buy_p = get_avg_buy_price(ticker)
                 # if bct_balances != None and bct_balances !=0: 
@@ -142,16 +144,17 @@ while True:
                 #         time.sleep(0.05)
                 #         sell_order(ticker, bct_balances)
                 #     buy_p = get_avg_buy_price(ticker)
-                if current_p <= buy_p * 0.98:
-                    time.sleep(0.05)
+                bct_balances = upbit.get_balance(ticker)
+                if current_p <= buy_p * 0.995 and bct_balances > 0.0002:
                     sell_order(ticker, bct_balances)
             now = datetime.datetime.now()
             start_time = get_start_time(ticker)
             end_time = start_time + datetime.timedelta(seconds=14400)
-            if end_time - datetime.timedelta(seconds=20) < now < end_time:
+            if end_time - datetime.timedelta(seconds=60) < now < end_time:
                 bct_balances = upbit.get_balance(ticker)
-                if bct_balances > 0.0002:
-                    upbit.sell_market_order(ticker, bct_balances)
+                if bct_balances != None and bct_balances !=0:                    
+                    if bct_balances > 0.0002:
+                        sell_order(ticker, bct_balances)
     except Exception as e:
         print(e)
         time.sleep(1)
