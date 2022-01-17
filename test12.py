@@ -10,7 +10,7 @@ secret = "mqsj8p9QYwd3A1Iich0KctXiz4ZJQrhDPxxA39DF"
 def get_target_price(ticker):
     time.sleep(0.05)
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
-    target_price = df.iloc[1]['open'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.5
+    target_price = df.iloc[1]['open'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.52
     return target_price
 #시작가
 def get_open_price(ticker):
@@ -99,87 +99,50 @@ print("autotrade start")
 op_mode = False
 ori_tickers = pyupbit.get_tickers(fiat="KRW")
 
-def main():
+async def main():
     while True:
         try:
             for ticker in ori_tickers:
                 now = datetime.datetime.now()
-                print(now)
                 start_time = get_start_time("KRW-BTC")
-                end_time = start_time + datetime.timedelta(seconds=14400)
+                end_time = start_time + datetime.timedelta(seconds=14400)                 
                 target_p = get_target_price(ticker)
                 open_p = get_open_price(ticker)
-                open1_p = get_open1_price(ticker)
-                close1_p = get_close1_price(ticker)
                 current_p = get_current_price(ticker)
+                buy_p = get_avg_buy_price(ticker)
                 ma5 = get_moving_average(5, ticker)
                 ma10 = get_moving_average(10, ticker)
                 ma20 = get_moving_average(20, ticker)
                 man5 = get_moving1_average(5, ticker)
                 man10 = get_moving1_average(10, ticker)
-                man20 = get_moving1_average(20, ticker)
                 krw = get_balance("KRW")
                 bct_balances = upbit.get_balance(ticker)
-                if start_time < now < start_time + datetime.timedelta(seconds=300):
-                    if man20 < man10 < man5 < current_p and open1_p < close1_p and man5 < ma5 and man10 < ma10 and 300 < current_p:
-                    #target_p < current_p and ma10 < ma5 and open_p * 1.02 < current_p
-                        if krw > 10500 and bct_balances < (3000/current_p):
+                if start_time < now < end_time - datetime.timedelta(seconds=300):
+                    if target_p < current_p and ma10 < ma5 and 200 < current_p:
+                    # await asyncio.sleep(0.5)
+                        if krw > 10200 and bct_balances == 0:
                             upbit.buy_market_order(ticker, 10000)
-                        if krw < 10500:
-                            print("금액 부족해서 매수 못해요")
+                        if current_p < buy_p * 0.98:
+                            upbit.sell_market_order(ticker, bct_balances * 0.995)
+                        if current_p > buy_p * 1.02:
+                            upbit.sell_market_order(ticker, bct_balances * 0.995)
                 else:
-                    submain()
-                    break
-        except Exception as e:
-            print(e)
-
-def submain():
-    while True:
-        try:
-            now = datetime.datetime.now()
-            print(now) 
-            start_time = get_start_time("KRW-BTC")
-            end_time = start_time + datetime.timedelta(seconds=14400) 
-            for ticker in ori_tickers:
-                bct_balances = upbit.get_balance(ticker)
-                buy_p = get_avg_buy_price(ticker)
-                current_p = get_current_price(ticker)
-                if start_time + datetime.timedelta(seconds=300) < now < start_time + datetime.timedelta(seconds=14100):
-                    if bct_balances > (3000/current_p):
-                        if current_p < buy_p * 0.985:
-                            upbit.sell_market_order(ticker, bct_balances * 0.999)
-                    if bct_balances < (3000/current_p):
-                        pass
-                else:
-                    submain2()
-                    break
-        except Exception as e:
-            print(e)
-
-def submain2():
-    while True:
-        try:
-            now = datetime.datetime.now()
-            print(now) 
-            start_time = get_start_time("KRW-BTC")
-            end_time = start_time + datetime.timedelta(seconds=14400)
-            for ticker in ori_tickers:
-                bct_balances = upbit.get_balance(ticker)
-                current_p = get_current_price(ticker)
-                if start_time + datetime.timedelta(seconds=14100) < now < end_time:
                     if bct_balances > (5000/current_p) and bct_balances > 0:
-                        upbit.sell_market_order(ticker, bct_balances * 0.999)
-                else:
-                    main()
-                    break
+                        upbit.sell_market_order(ticker, bct_balances)
+                    if 0 < bct_balances < (5000/current_p):
+                        upbit.buy_market_order(ticker, 5100)
+                    if bct_balances == 0:
+                        pass
         except Exception as e:
             print(e)
 
 while True:
     now = datetime.datetime.now() 
-    if now.hour == 8 and now.minute == 0 and 1 <=now.second <= 10:
+    if now.hour == 9 and now.minute == 0 and 1 <=now.second <= 10:                
         op_mode = True
-    if op_mode == True:
-        main()
+        print("시작")
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(asyncio.gather(main()))       
+    if op_mode == True:       
         time.sleep(1)
         break
