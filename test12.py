@@ -10,7 +10,7 @@ secret = "mqsj8p9QYwd3A1Iich0KctXiz4ZJQrhDPxxA39DF"
 def get_target_price(ticker):
     time.sleep(0.05)
     df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
-    target_price = df.iloc[1]['open'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.52
+    target_price = df.iloc[1]['low'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.52
     return target_price
 #시작가
 def get_open_price(ticker):
@@ -107,42 +107,59 @@ async def main():
                 start_time = get_start_time("KRW-BTC")
                 end_time = start_time + datetime.timedelta(seconds=14400)                 
                 target_p = get_target_price(ticker)
-                open_p = get_open_price(ticker)
                 current_p = get_current_price(ticker)
-                buy_p = get_avg_buy_price(ticker)
                 ma5 = get_moving_average(5, ticker)
-                ma10 = get_moving_average(10, ticker)
-                ma20 = get_moving_average(20, ticker)
                 man5 = get_moving1_average(5, ticker)
-                man10 = get_moving1_average(10, ticker)
                 krw = get_balance("KRW")
                 bct_balances = upbit.get_balance(ticker)
                 if start_time < now < end_time - datetime.timedelta(seconds=300):
-                    if target_p < current_p and 200 < current_p:
-                    # await asyncio.sleep(0.5)
+                    if target_p < current_p and man5 < ma5 and 200 < current_p:
                         if krw > 10200 and bct_balances == 0:
                             upbit.buy_market_order(ticker, 10000)
-                    if current_p < buy_p * 0.98:
-                        upbit.sell_market_order(ticker, bct_balances * 0.995)
-                    if current_p > buy_p * 1.02:
-                        upbit.sell_market_order(ticker, bct_balances * 0.995)
-                else:
-                    if bct_balances > (5000/current_p) and bct_balances > 0:
-                        upbit.sell_market_order(ticker, bct_balances)
+                await asyncio.sleep(0.5)
+        except Exception as e:
+            print(e)
+
+async def submain():
+    while True:
+        try:
+            for ticker in ori_tickers:
+                current_p = get_current_price(ticker)
+                buy_p = get_avg_buy_price(ticker)
+                bct_balances = upbit.get_balance(ticker)
+                if current_p < buy_p * 0.98 and 0 < bct_balances:
+                    upbit.sell_market_order(ticker, bct_balances * 0.995)
+                if current_p > buy_p * 1.02 and 0 < bct_balances:
+                    upbit.sell_market_order(ticker, bct_balances * 0.995)
+                await asyncio.sleep(0.5)
+        except Exception as e:
+            print(e)
+
+async def submain2():
+    while True:
+        try:
+            for ticker in ori_tickers:
+                now = datetime.datetime.now()
+                start_time = get_start_time("KRW-BTC")
+                end_time = start_time + datetime.timedelta(seconds=14400)
+                current_p = get_current_price(ticker)
+                bct_balances = upbit.get_balance(ticker)
+                if end_time - datetime.timedelta(seconds=300) < now < end_time:
                     if 0 < bct_balances < (5000/current_p):
                         upbit.buy_market_order(ticker, 5100)
-                    if bct_balances == 0:
-                        pass
+                    if (5000/current_p) < bct_balances < (6000/current_p) and 0 < bct_balances:
+                        upbit.sell_market_order(ticker, bct_balances)
+                await asyncio.sleep(0.5)
         except Exception as e:
             print(e)
 
 while True:
-    now = datetime.datetime.now() 
-    if now.hour == 13 and now.minute == 0 and 1 <=now.second <= 10:                
+    now = datetime.datetime.now()
+    if now.hour == 1 and now.minute == 0 and 1 <=now.second <= 10:                
         op_mode = True
         print("시작")
         loop = asyncio.get_event_loop()
-        loop.run_until_complete(asyncio.gather(main()))       
-    if op_mode == True:       
+        loop.run_until_complete(asyncio.gather(main(), submain(), submain2()))
+    if op_mode == True:
         time.sleep(1)
         break
