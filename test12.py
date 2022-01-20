@@ -9,43 +9,43 @@ secret = "mqsj8p9QYwd3A1Iich0KctXiz4ZJQrhDPxxA39DF"
 #변동성 돌파 전략으로 매수 목표가 조회
 def get_target_price(ticker):
     time.sleep(0.05)
-    df = pyupbit.get_ohlcv(ticker, interval="minute60", count=2)
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     target_price = df.iloc[1]['low'] + (df.iloc[0]['high'] - df.iloc[0]['low']) * 0.52
     return target_price
 #시작가
 def get_open_price(ticker):
     time.sleep(0.05)
-    df = pyupbit.get_ohlcv(ticker, interval="minute60", count=2)
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     open_price = df.iloc[1]['open']
     return open_price
 #종가
 def get_close_price(ticker):
     time.sleep(0.05)
-    df = pyupbit.get_ohlcv(ticker, interval="minute60", count=2)
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     close_price = df.iloc[1]['close']
     return close_price
 #최저가
 def get_low_price(ticker):
     time.sleep(0.05)
-    df = pyupbit.get_ohlcv(ticker, interval="minute60", count=2)
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     low_price = df.iloc[1]['low']
     return low_price
 #전날시가
 def get_open1_price(ticker):
     time.sleep(0.05)
-    df = pyupbit.get_ohlcv(ticker, interval="minute60", count=2)
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     high_price = df.iloc[0]['open']
     return high_price
 #전날종가
 def get_close1_price(ticker):
     time.sleep(0.05)
-    df = pyupbit.get_ohlcv(ticker, interval="minute60", count=2)
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     close_price = df.iloc[0]['close']
     return close_price
 #시작 시간 조회
 def get_start_time(ticker):
     time.sleep(0.1)
-    df = pyupbit.get_ohlcv(ticker, interval="minute60", count=2)
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=2)
     start_time = df.index[1]
     return start_time  
 #잔고 조회
@@ -69,7 +69,7 @@ def get_avg_buy_price(ticker):
 def get_moving_average(window, ticker):
     try:
         time.sleep(0.05)
-        df = pyupbit.get_ohlcv(ticker, interval="minute60")
+        df = pyupbit.get_ohlcv(ticker, interval="minute240")
         ma = df['close'].rolling(window=window).mean()
         return ma[-1]
     except Exception as e:
@@ -78,7 +78,7 @@ def get_moving_average(window, ticker):
 def get_moving1_average(window, ticker):
     try:
         time.sleep(0.05)
-        df = pyupbit.get_ohlcv(ticker, interval="minute60")
+        df = pyupbit.get_ohlcv(ticker, interval="minute240")
         ma = df['close'].rolling(window=window).mean()
         return ma[-2]
     except Exception as e:
@@ -86,7 +86,7 @@ def get_moving1_average(window, ticker):
 #최고가 조회
 def get_high_price(ticker):
     time.sleep(0.05)
-    df = pyupbit.get_ohlcv(ticker, interval="minute60", count=1)
+    df = pyupbit.get_ohlcv(ticker, interval="minute240", count=1)
     high_price = df.iloc[0]['high']
     return high_price
 # 로그인
@@ -111,7 +111,6 @@ async def main():
                 krw = get_balance("KRW")
                 bct_balances = upbit.get_balance(ticker)
                 if target_p < current_p and man5 < ma5 and ma10 < ma5:
-                    await asyncio.sleep(0.5)
                     if krw > 26000 and bct_balances == 0:
                         upbit.buy_market_order(ticker, 5100)
                 await asyncio.sleep(0.5)
@@ -126,8 +125,7 @@ async def submain():
                 buy_p = get_avg_buy_price(ticker)
                 bct_balances = upbit.get_balance(ticker)
                 if 0 < bct_balances:
-                    await asyncio.sleep(0.5)
-                    if current_p < buy_p * 0.96:
+                    if current_p < buy_p * 0.93:
                         upbit.buy_market_order(ticker, bct_balances)
                     if current_p > buy_p * 1.02:
                         upbit.sell_market_order(ticker, bct_balances)
@@ -137,7 +135,7 @@ async def submain():
 
 while True:
     now = datetime.datetime.now()
-    if now.hour == 7 and now.minute == 0 and 1 <=now.second <= 10:
+    if now.hour == 23 and now.minute == 0 and 1 <=now.second <= 10:
         op_mode = True
         print("시작")
         loop = asyncio.get_event_loop()
