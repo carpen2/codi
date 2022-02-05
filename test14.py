@@ -110,7 +110,7 @@ async def main():
                 man5 = get_moving1_average(5, ticker)
                 krw = get_balance("KRW")
                 bct_balances = upbit.get_balance(ticker)
-                if start_time < now < end_time - datetime.timedelta(seconds=400) :
+                if start_time < now < end_time - datetime.timedelta(seconds=500) :
                     if target_p < current_p and man5 < ma5 and ma10 < ma5:
                         if krw > 920000 and bct_balances == 0 and 150 < current_p:
                             upbit.buy_market_order(ticker, 40000)
