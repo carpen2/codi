@@ -134,22 +134,22 @@ async def submain():
                 bct_balances = upbit.get_balance(ticker)
                 if 0 < bct_balances:
                     if (5000/current_p) < bct_balances < (135000/current_p):
-                        if current_p < buy_p*0.96:
+                        if current_p < buy_p*0.97:
                             upbit.buy_market_order(ticker, 135000)
-                        elif current_p > buy_p*1.02:
-                            upbit.sell_market_order(ticker, bct_balances*0.999)
+                        elif current_p > buy_p*1.05:
+                           upbit.sell_market_order(ticker, bct_balances*0.999)
                     elif (135000/current_p) < bct_balances < (337500/current_p):
                         if current_p < buy_p*0.96:
                             upbit.buy_market_order(ticker, 337500)
-                        elif current_p > buy_p*1.02:
+                        elif current_p > buy_p*1.05:
                             upbit.sell_market_order(ticker, bct_balances*0.999)
                     elif (337500/current_p) < bct_balances < (843750/current_p):
                         if current_p < buy_p*0.95:
                             upbit.buy_market_order(ticker, 843750)
-                        elif current_p > buy_p*1.02:
+                        elif current_p > buy_p*1.05:
                             upbit.sell_market_order(ticker, bct_balances*0.999)
                     elif (843750/current_p) < bct_balances:
-                        if current_p > buy_p*1.02:
+                        if current_p > buy_p*1.05:
                             upbit.sell_market_order(ticker, bct_balances*0.999)
                 await asyncio.sleep(0.5)
         except Exception as e:
@@ -157,7 +157,7 @@ async def submain():
 
 while True:
     now = datetime.datetime.now()
-    if now.hour == 17 and now.minute == 30 and 1 <=now.second <= 10:
+    if now.hour == 19 and now.minute == 0 and 1 <=now.second <= 10:
         op_mode = True
         print("시작")
         loop = asyncio.get_event_loop()
