@@ -112,7 +112,7 @@ async def main():
                 bct_balances = upbit.get_balance(ticker)
                 if start_time < now < start_time + datetime.timedelta(seconds=600):
                     if target_p < current_p and ma10 < man5 < ma5:
-                        if krw > 2600000 and bct_balances == 0 and 10 < current_p:
+                        if krw > 2700000 and bct_balances == 0 and 150 < current_p:
                             upbit.buy_market_order(ticker, 100000)
                         await asyncio.sleep(2)
                 elif start_time + datetime.timedelta(seconds=3000) < now < end_time:
@@ -150,7 +150,7 @@ async def submain():
 
 while True:
     now = datetime.datetime.now()
-    if now.hour == 13 and now.minute == 0 and 1 <=now.second <= 10:
+    if now.hour == 9 and now.minute == 0 and 1 <=now.second <= 10:
         op_mode = True
         print("시작")
         loop = asyncio.get_event_loop()
