@@ -110,12 +110,12 @@ async def main():
                 man5 = get_moving1_average(5, ticker)
                 krw = get_balance("KRW")
                 bct_balances = upbit.get_balance(ticker)
-                if start_time < now < end_time - datetime.timedelta(seconds=500) :
-                    if target_p < current_p and man5 < ma5 and ma10 < ma5:
-                        if krw > 2600000 and bct_balances == 0 and 100 < current_p:
+                if start_time < now < start_time + datetime.timedelta(seconds=600):
+                    if target_p < current_p and ma10 < man5 < ma5:
+                        if krw > 2600000 and bct_balances == 0 and 10 < current_p:
                             upbit.buy_market_order(ticker, 100000)
                         await asyncio.sleep(2)
-                else:
+                elif start_time + datetime.timedelta(seconds=3000) < now < end_time:
                     if 0 < bct_balances:
                         if bct_balances < (5000/current_p):
                             upbit.buy_market_order(ticker, 5200)
@@ -133,9 +133,17 @@ async def submain():
                 buy_p = get_avg_buy_price(ticker)
                 bct_balances = upbit.get_balance(ticker)
                 if 0 < bct_balances:
-                    if (5000/current_p) < bct_balances < (150000/current_p):
+                    if (50000/current_p) < bct_balances < (120000/current_p):
+                        if current_p < buy_p*0.96:
+                            upbit.buy_market_order(ticker, 200000)
+                        elif current_p > buy_p*1.025:
+                           upbit.sell_market_order(ticker, bct_balances*0.999)
+                    elif (200000/current_p) < bct_balances < (400000/current_p):
                         if current_p > buy_p*1.025:
                            upbit.sell_market_order(ticker, bct_balances*0.999)
+                    elif (400000/current_p) < bct_balances:
+                        if current_p > buy_p*1.2:
+                            upbit.sell_market_order(ticker, bct_balances*0.999)
                 await asyncio.sleep(0.5)
         except Exception as e:
             print(e)
