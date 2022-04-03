@@ -134,23 +134,15 @@ async def submain():
                 bct_balances = upbit.get_balance(ticker)
                 if 0 < bct_balances:
                     if (50000/current_p) < bct_balances < (120000/current_p):
-                        if current_p < buy_p*0.96:
-                            upbit.buy_market_order(ticker, 200000)
-                        elif current_p > buy_p*1.025:
-                           upbit.sell_market_order(ticker, bct_balances*0.999)
-                    elif (200000/current_p) < bct_balances < (400000/current_p):
                         if current_p > buy_p*1.025:
                            upbit.sell_market_order(ticker, bct_balances*0.999)
-                    elif (400000/current_p) < bct_balances:
-                        if current_p > buy_p*1.2:
-                            upbit.sell_market_order(ticker, bct_balances*0.999)
                 await asyncio.sleep(0.5)
         except Exception as e:
             print(e)
 
 while True:
     now = datetime.datetime.now()
-    if now.hour == 9 and now.minute == 0 and 1 <=now.second <= 10:
+    if now.hour == 19 and now.minute == 0 and 1 <=now.second <= 10:
         op_mode = True
         print("시작")
         loop = asyncio.get_event_loop()
