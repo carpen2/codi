@@ -143,7 +143,7 @@ async def submain():
 
 while True:
     now = datetime.datetime.now()
-    if now.hour == 21 and now.minute == 0 and 1 <=now.second <= 10:
+    if now.hour == 1 and now.minute == 0 and 1 <=now.second <= 10:
         op_mode = True
         print("시작")
         loop = asyncio.get_event_loop()
